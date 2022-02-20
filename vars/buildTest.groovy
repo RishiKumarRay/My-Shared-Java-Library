@@ -1,13 +1,17 @@
 def call () {
 stage('Build')
-        {   steps{
-            mavenBuild()
-        }
+        {   
+                steps{
+            
+                        sh 'mvn clean compile'
+                     }
           }
 
+       
         stage('test')
         {
-            steps{
+            steps
+                {
                 sh 'mvn test'
             }
         }
